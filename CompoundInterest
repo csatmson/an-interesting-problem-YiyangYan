@@ -1,0 +1,17 @@
+# initial = 1000, interest = 5%
+# P=1000, r=.05, n = 12, t = input
+
+
+# first problem
+year = input("How many years will you save the money? ")
+(1000 * ((1+.05/12)**(12*int(year))))
+
+print("the final amount is $", (1000 * ((1+.05/12)**(12*int(year)))))
+
+
+# second problem
+initial = float(input("How much money will you invest? "))
+rate = float(input("How much interest is the bank giving? "))
+
+
+print("you will get the following amounts in 5, 10, 25 years: ", (initial * ((1+rate/12)**(12*5))),(initial * ((1+rate/12)**(12*10))), (initial * ((1+rate/12)**(12*25))))
