@@ -1,0 +1,68 @@
+import random
+import time
+
+print("----------------------------------------")
+print("Welcome to Rock Paper Scissors")
+print("The first to 3 points wins")
+print("----------------------------------------")
+print("")
+
+
+throwList = ["rock", "paper", "scissors"]
+countP = 0
+countC = 0
+
+
+
+while countP < 3 and countC < 3:
+
+    player = input("choose from rock paper or scissors (type r,p, or s): ")
+    computer = random.choice(throwList)
+    time.sleep(.5)
+    print("Computer chooses", computer.upper())
+
+    if player != "r" and player != "p" and player != "s":
+        print("invalid inputs")
+        print("")
+        continue
+
+    if player == "r" :
+        if computer == "rock":
+            print("Draw!")
+        elif computer == "scissors":
+            print("You Win!!!!")
+            countP += 1
+        else:
+            print("You Lost!!!!")
+            countC += 1
+
+    if player == "p" :
+        if computer == "rock":
+            print("You Win!!!!")
+            countP += 1
+        elif computer == "scissors":
+            print("You Lost!!!!")
+            countC += 1
+        else:
+            print("Draw!")
+
+    if player == "s" :
+        if computer == "rock":
+            print("You Lost!!!!")
+            countC += 1
+        elif computer == "scissors":
+            print("Draw!")
+        else:
+            print("You Win!!!!")
+            countP += 1
+
+    print("player score: ", countP)
+    print("computer score: ", countC)
+    print("")
+    time.sleep(0.5)
+
+
+if countP == 3:
+    print("*Victory*")
+else:
+    print("~Defeat~")
